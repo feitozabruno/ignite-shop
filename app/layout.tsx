@@ -1,7 +1,11 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { roboto } from "@/app/styles/fonts";
 import { getCssText } from "@/app/styles/stitches.config";
 import { globalStyles } from "@/app/styles/stitches.global";
-import { roboto } from "@/app/styles/fonts";
-import type { Metadata } from "next";
+import { Container, Header } from "@/app/styles/ui/header";
+
+import logo from "@/public/logo.svg";
 
 globalStyles();
 
@@ -23,7 +27,14 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: getCssText() }}
         />
       </head>
-      <body className={`${roboto.className} antialiased`}>{children}</body>
+      <body className={`${roboto.className} antialiased`}>
+        <Container>
+          <Header>
+            <Image src={logo} width={130} height={52} alt="" />
+          </Header>
+          {children}
+        </Container>
+      </body>
     </html>
   );
 }
