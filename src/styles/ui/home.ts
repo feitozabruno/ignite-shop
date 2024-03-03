@@ -1,4 +1,4 @@
-import { styled } from "@/app/styles/stitches.config";
+import { styled } from "@/src/styles/stitches.config";
 
 export const HomeContainer = styled("main", {
   display: "flex",
@@ -7,6 +7,7 @@ export const HomeContainer = styled("main", {
   maxWidth: "calc(100vw - ((100vw - 1180px) / 2))",
   marginLeft: "auto",
   minHeight: 656,
+  overflowX: "hidden",
 });
 
 export const Product = styled("a", {
@@ -16,6 +17,8 @@ export const Product = styled("a", {
   cursor: "pointer",
   position: "relative",
   overflow: "hidden",
+  marginRight: "3rem",
+  minHeight: 656,
 
   display: "flex",
   alignItems: "center",

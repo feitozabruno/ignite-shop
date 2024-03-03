@@ -1,4 +1,4 @@
-import { styled } from "@/app/styles/stitches.config";
+import { styled } from "@/src/styles/stitches.config";
 
 export const Container = styled("div", {
   display: "flex",
