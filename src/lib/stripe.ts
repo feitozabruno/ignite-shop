@@ -13,4 +13,6 @@ export interface ProductData {
   name: string;
   imageUrl: string;
   price: string | number;
+  description?: string;
+  defaultPriceId?: string;
 }

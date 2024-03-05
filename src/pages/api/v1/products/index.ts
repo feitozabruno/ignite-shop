@@ -1,10 +1,13 @@
-import type { NextApiResponse } from "next";
+import type { NextApiRequest, NextApiResponse } from "next";
 
 import { stripe, ProductData } from "@/src/lib/stripe";
 
 import { Stripe } from "stripe";
 
-export default async function products(res: NextApiResponse<ProductData[]>) {
+export default async function products(
+  req: NextApiRequest,
+  res: NextApiResponse<ProductData[]>
+) {
   const getProducts = await stripe.products.list({
     expand: ["data.default_price"],
   });
